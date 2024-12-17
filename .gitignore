@@ -37,3 +37,6 @@ jest-test-results.json
 
 # Other files to ignore
 *.tgz
+
+
+uploads/
