@@ -19,7 +19,7 @@ export const upload = multer({
   storage,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max file size
   fileFilter: (req, file, cb) => {
-    const fileTypes = /jpeg|jpg|png|gif/;
+    const fileTypes = /jpeg|jpg|png|gif|pdf|docs/;
     const extname = fileTypes.test(
       path.extname(file.originalname).toLowerCase()
     );
@@ -28,7 +28,7 @@ export const upload = multer({
     if (extname && mimetype) {
       cb(null, true);
     } else {
-      cb(new Error("Only images are allowed"));
+      cb(new Error("Only images and documents are allowed"));
     }
   },
 });
