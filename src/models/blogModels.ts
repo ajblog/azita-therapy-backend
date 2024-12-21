@@ -19,7 +19,7 @@ export const createBlogPost = async (post: BlogPost) => {
 export const getAllBlogPosts = async () => {
   // Select only the title, description, and picture columns
   const [rows] = await db.query(
-    "SELECT title, description, picture, id FROM blogposts"
+    "SELECT title, description, picture, id, created_at FROM blogposts"
   );
   return rows;
 };
